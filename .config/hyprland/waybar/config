@@ -1,0 +1,165 @@
+//====================================================================================================//
+// Waybar Configuration File                                                                          //
+//----------------------------------------------------------------------------------------------------//
+// Purpose: Creates a minimalistic (yet functional) waybar at                                         //
+// the top of the screen.                                                                             //
+// themes and colors, set the wallpaper, and more.                                                    //
+//                                                                                                    //
+// License: Creative Commons Attribution 4.0 International                                            //
+//                                                                                                    //
+// Credit:                                                                                            //
+// Battery section adapted from:                                                                      //
+// https://github.com/Egosummiki/dotfiles/blob/master/waybar/config                                   //
+//                                                                                                    //
+// Pipewire audio adapted from:                                                                       //
+// https://www.reddit.com/r/swaywm/comments/sks343/pwvolume_pipewire_volume_control_and_waybar_module //
+//====================================================================================================//
+[
+  {
+    "name": "topbar",
+    "layer": "top",
+    "position": "top",
+    "exclusive": true,
+    "spacing": 2,
+    "reload_style_on_change": true,
+    "ipc": true,
+
+    // Orden de módulos
+    "modules-left": [
+      "hyprland/workspaces",
+      "hyprland/window"
+    ],
+    "modules-center": ["clock"],
+    "modules-right": [
+      "cpu",
+      "memory",
+      "disk",
+      "network",
+      "custom/temperature",
+      "wireplumber",
+      "custom/updates",
+      "custom/trash",
+      "custom/notifications",
+      "tray"
+    ],
+    // --- Configuración de módulos ---
+    "hyprland/workspaces": {
+      "disable-scroll": true,
+      "all-outputs": false,
+      "format": "{icon}",
+      "format-icons": {
+          "1": "",
+          "2": "",
+          "3": "",
+          "4": "",
+          "5": "",
+          "6": "",
+          "7": "",
+          "8": "",
+          "9": "",
+          "10": ""
+      }
+    },
+    "hyprland/window": {
+      "format": "{title}",
+      "max-length": 50
+    },
+    "clock": {
+      "format": "{:%d %b %H:%M}",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "cpu": {
+      "format": "{usage}% 󰍛",
+      "interval": 1,
+      "min-length": 5,
+      "format-alt-click": "click",
+      "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
+      "format-icons": [
+        "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"
+      ],
+//      "on-click-right": "alacritty --config-file ~/.config/alalacritty/btm.toml -e btm"
+      "on-click-right": "kitty --class=btm -e btm"
+    },
+    "memory": {
+      "interval": 10,
+      "format": "{used:0.1f}G 󰾆",
+      "format-alt": "{percentage}% 󰾆",
+      "format-alt-click": "click",
+      "tooltip": true,
+      "tooltip-format": "{used:0.1f}GB/{total:0.1f}G",
+//      "on-click-right": "alacritty --config-file ~/.config/alacritty/btm.toml -e btm"
+      "on-click-right": "kitty --class=btm -e btm"
+    },
+    "disk": {
+      "interval": 30,
+      "path": "/home/$user",
+      "format": "{percentage_used}% 󰋊",
+      "tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)",
+    },
+    "network": {
+      "interval": 2,
+      "format-ethernet": " {bandwidthUpBits}  {bandwidthDownBits}",
+      "format-disconnected": "",
+      "tooltip-format-ethernet": "{ifname} {ipaddr}"
+    },
+    "custom/temperature": {
+      "interval": 10,
+      "tooltip": true,
+      "exec": "~/.config/waybar/scripts/cpuTemperature.sh",
+      "critical-threshold": 90,
+      "format-critical": "{temperatureC}°C {icon}",
+      "format": "{temperatureC}°C {icon}",
+      "format-icons": [
+        "",  // frío
+        "",  // medio
+        ""   // caliente
+      ],
+      "return-type": "json",
+      "format": "{}",
+//      "on-click-right": "alacritty --config-file ~/.config/alacritty/btm.toml -e btm"
+      "on-click-right": "kitty --class=btm -e btm"
+    },
+    "wireplumber": {
+      "format": "{icon} {volume}%",
+      "format-muted": "󰝟",
+      "format-icons": ["", "", "", "󰕾"],
+      "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+      "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+      "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+      "on-click-right": "pavucontrol -t 3"
+    },
+    "custom/updates": {
+      "exec": "~/.config/waybar/scripts/sysUpdates.sh",
+      "interval": 30,
+      "return-type": "json",
+      "format": " {} Updates",
+      "tooltip": true
+    },
+    "custom/trash": {
+      "exec": "~/.config/waybar/scripts/sysTrash.sh",
+      "interval": 30,
+      "return-type": "json",
+      "format": "{}"
+    },
+    "custom/notifications": {
+      "exec": "
+        total=$(makoctl list | grep -c '^Notification');
+        urgent=$(makoctl list | grep -c 'Urgency: critical');
+        if [ \"$urgent\" -gt 0 ]; then
+          echo \" $total\";
+        elif [ \"$total\" -gt 0 ]; then
+          echo \" $total\";
+        else
+          echo \"\";
+        fi
+      ",
+      "on-click": "makoctl dismiss -a",
+      "interval": 1,
+      "format": "{}"
+    },
+    "tray": {
+      "icon-size": 14,
+      "spacing": 10
+    }
+  }
+]

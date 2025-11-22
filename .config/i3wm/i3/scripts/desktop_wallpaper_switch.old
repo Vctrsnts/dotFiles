@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# INDIQUES QUIN ES EL DIRECTORI, EL TEU CAS, ON TENS ELS WALLPAPERS
+PICS=($HOME/.config/wallpapers/*)
+
+# ES REALITZAR LA SELECCIÓ DEL WALLPAPER
+CURRENT_PIC="${PICS[RANDOM % ${#PICS[@]}+1]}"
+
+# ES REALITZAR EL CANVI DE WALLPAPER
+#feh --bg-fill "$CURRENT_PIC"
+feh --bg-scale "$CURRENT_PIC"
+
+# ES REALITZAR LA NOTIFICACIÓ DEL CANVI
+notify-send -i "$CURRENT_PIC" 'Desktop Changed' $(basename -- "$CURRENT_PIC")

@@ -1,0 +1,5 @@
+ENTRY "Home" URL "/home/$user"
+ENTRY "Mount Disk" URL "/run/media/$user"
+ENTRY "dasReich" URL "/sh://dasReich/mnt/user"
+ENTRY "Wiking" URL "/sh://wiking/home/$user"
+ENTRY "Reichfuhrer" URL "/sh://reichfuhrer/home/$user"

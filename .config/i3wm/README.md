@@ -1,0 +1,19 @@
+Aqui tinc la meva configuració de les diferents aplicacions que faig servir :
+- bash --> Es on estan els fitxers de configuració de `bash`
+- fonts --> Es on estan les fonts que faig servir tant per `I3wm` com per `kitty`
+- gtk-2.0 --> Configuració per a les aplicacions que fan servir `GTK-2.0`
+- gtk-3.0 --> Configuració per a les aplicacions que fan servir `GTK-3.0`
+- i3 -->
+  - `config` --> Configuració que faig servir per a `I3wm`
+  - `i3-blocks` --> Configuració que faig servir per a l'aplicació `i3-blocks`
+  - `scripts` --> Scripts que fem servir en `i3-wm`
+    - `apt-upgrades` --> fitxer per visualitzar els paquets per actualitzar. S'ha de fer amb un cron en root de la següent manera:
+      - `@daily aptitude update`
+- kitty --> Configuració per al terminal
+  - Ara mateix no es fa servir. No funciona `kitty` en **Debian GNU/Linux SID**
+- nvim --> Configuració de `NeoVim`
+  - No es fa servir actualment
+- rofi --> Configuració de l'aplicació de `Rofi`
+- tmux --> Configuració que feia servir per a `tmux`
+  - No es fa servir actualment
+- wezterm --> Configuració que es fa servir pel terminal wezterm. El que estic servir ara mateix

@@ -1,0 +1,6 @@
+#
+# DESCRIPCIÓ DELS MEU ALIAS PERSONALS
+#
+alias vi='nvim'
+alias vim='nvim'
+alias icat="kitty +kitten icat"

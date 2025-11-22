@@ -1,0 +1,28 @@
+{
+    "inline code": {
+        "prefix": "ic",
+        "body": ["`$1`$0"]
+    },
+    "code block": {
+        "prefix": "cb",
+        "body": [
+            "```",
+            "$1",
+            "```",
+            "$0"
+        ]
+    },
+    "zettel note": {
+        "prefix": "zn",
+        "body": [
+            "---",
+            "title: $1",
+            "filename: $TM_FILENAME",
+            "created_at: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+            "updated_at: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+            "tags: $2",
+            "---",
+            "$0"
+        ]
+    }
+}

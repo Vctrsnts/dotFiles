@@ -1,0 +1,16 @@
+# authorize polkit-gnome
+exec lxpolkit
+#exec --no-startup-id clipman
+# Activate notifications ( mako )
+exec mako
+
+# load gtk themes with script
+exec --no-startup-id ~/.config/sway/scripts/import-gsettings.sh
+# start rotate background
+exec --no-startup-id ~/.config/sway/scripts/background-rotator.sh
+
+exec swayidle \
+   timeout 900 'swaylock -f -c 000000' \
+   timeout 1800 'swaymsg "output * dpms off"' \
+      resume 'swaymsg "output * dpms on"' \
+   before-sleep 'swaylock -f -c 000000'

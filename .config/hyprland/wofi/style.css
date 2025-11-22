@@ -1,0 +1,90 @@
+/*
+───────────────────────────────────────────────
+ Wofi Nord Theme - Custom Style
+───────────────────────────────────────────────
+Este archivo define un estilo personalizado para Wofi
+basado en la paleta Nord. El objetivo es mantener una
+estética limpia, elegante y coherente con el entorno
+Hyprland/Wayland, usando tonos fríos y suaves.
+
+Paleta seleccionada:
+- base     (#2e3440): Fondo principal oscuro, con transparencia
+- surface0 (#3b4252): Fondo ligeramente más claro para inputs
+- text     (#d8dee9): Texto principal, claro y legible
+- subtext  (#e5e9f0): Texto secundario, más suave
+- green    (#a3be8c): Acento verde Nord, usado en detalles
+- teal     (#81a1c1): Azul Nord, acento principal en bordes y selección
+- red      (#bf616a): Rojo Nord, reservado para avisos o errores
+
+Funcionamiento:
+- La ventana principal usa @base con transparencia y bordes redondeados.
+- El campo de búsqueda (#input) se destaca con @surface0 y borde azul.
+- Las entradas (#entry) tienen esquinas redondeadas y texto secundario.
+- La entrada seleccionada (#entry:selected) se resalta con un azul Nord
+  translúcido, evitando el bloque gris por defecto.
+- El texto seleccionado (#text:selected) mantiene un tono claro y suave,
+  sin recuadros ni sombras, para una apariencia más limpia.
+- Los iconos (#img) se alinean con espacio y sutil redondeo.
+
+Este estilo busca un equilibrio entre legibilidad y estética minimalista,
+aprovechando la paleta Nord para un entorno visual consistente.
+───────────────────────────────────────────────
+*/
+@define-color base     #2e3440; /* Dark Background Nord */
+@define-color surface0 #3b4252; /* Slightly lighter background */
+@define-color text     #d8dee9; /* Main Text */
+@define-color subtext  #e5e9f0; /* Secondary Text */
+@define-color green    #a3be8c; /* Nord Green Accent */
+@define-color teal     #81a1c1; /* Nord Blue Accent */
+@define-color red      #bf616a; /* Nord Red Accent */
+
+window {
+  background-color: rgba(46, 52, 64, 0.8); /* @base with transparency */
+  border: 2px solid @teal;
+  border-radius: 14px;
+  font-family: "JetBrains Nerd Font Light";
+  font-size: 15px;
+}
+#inner-box {
+  margin: 5px;
+  padding: 10px;
+}
+#img {
+  margin-right: 12px;
+  min-height: 24px;
+  min-width: 24px;
+  padding-left: 5px;
+  border-radius: 4px;
+}
+#scroll {
+  margin-top: 5px;
+}
+#text {
+  color: @text;
+  margin-left: 10px;
+}
+#text:selected {
+  color: #e5e9f0;        /* o el tono que prefieras */
+  background-color: transparent; /* elimina el recuadro gris */
+  box-shadow: none;      /* por si GTK añade sombra */
+  outline: none;         /* asegura que no haya borde */
+}
+#input {
+  background-color: @surface0;
+  color: @text;
+  padding: 8px 12px;
+  margin: 10px;
+  border: 1px solid @teal;
+  border-radius: 10px;
+}
+#entry {
+  padding: 8px 10px;
+  min-height: 40px;
+  border-radius: 10px;
+  color: @subtext;
+}
+#entry:selected {
+  background-color: rgba(129, 161, 193, 0.35); /* Nord Blue suave */
+  outline: none; /* elimina el borde duro */
+  box-shadow: none; /* evita que aparezca la barra horizontal */
+}

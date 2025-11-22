@@ -1,0 +1,135 @@
+/* Fuente y estilo base */
+* {
+  font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", monospace;
+  font-size: 10px;
+  padding: 2px;
+  font-size: 97%;
+  color: #ECEFF4; /* Nord Snow */
+}
+#cpu,
+#memory,
+#workspaces,
+#workspaces button,
+#disk,
+#clock,
+#tray,
+#wireplumber,
+#custom-temperature,
+#custom-updates,
+#custom-updates.none,
+#custom-updates.normal,
+#custom-updates.warning,
+#custom-trash,
+#custom-notifications,
+#network,
+#network.disconnected,
+#window,
+#mode {
+  background: rgba(59, 66, 82, 0.7);
+  padding: 0px 6px;
+  margin: 2px 4px;
+  border-radius: 8px;
+  font-size: 10px
+}
+#network,
+#cpu,
+#memory,
+#disk,
+#custom-temperature,
+#custom-updates.none,
+#wireplumber,
+#workspaces {
+  color: #88C0D0;
+}
+#clock,
+#tray,
+#workspaces button:hover,
+#window,
+#workspaces button.focused {
+  color: #ECEFF4;
+}
+window#waybar {
+  background: rgba(46, 52, 64, 0.4); /* Nord0 con 40% opacidad */
+  border-bottom: 1px solid rgba(76, 86, 106, 0.5); /* Nord3 semitransparente */
+  transition-duration: .2s;
+  transition-property: background-color;
+  min-height: 0;
+ }
+#window {
+  font-weight: 500;
+}
+#workspaces button {
+  background: transparent;
+  color: #D8DEE9;
+  opacity: 0.7;
+}
+#workspaces button.focused {
+  background: #4C566A;
+  opacity: 0.9;
+}
+#workspaces button.urgent {
+  background-color: #BF616A; /* Nord Red */
+}
+#workspaces button:hover {
+  background: #3B4252;
+  border-bottom: 1px solid #88C0D0; /* Nord Cyan */
+}
+/* --- System (CPU + RAM + Disk + Temperature) --- */
+#cpu, #memory, #disk, #custom-temperature {
+  border-radius: 12px;
+  margin: 2px 4px;
+  font-family: monospace;
+}
+/* Temperatura crítica (>90°C en tu config) */
+#custom-temperature.critical {
+  color: #BF616A; /* rojo Nord */
+  font-weight: bold;
+}
+/* --- Updates --- */
+#custom-updates {
+  font-family: monospace;
+}
+/* Estado normal (≤10 paquetes, sin críticos) */
+#custom-updates.normal {
+  color: #A3BE8C; /* Nord14 - verde */
+}
+/* Estado warning (11–30 paquetes) */
+#custom-updates.warning {
+  color: #EBCB8B; /* Nord12 - amarillo */
+  font-weight: bold; /* opcional */
+}
+/* Estado critical (>30 o paquetes críticos) */
+#custom-updates.critical {
+  color: #BF616A; /* Nord11 - rojo */
+  font-weight: bold;
+}
+/* --- Trash --- */
+#custom-trash {
+  font-family: monospace;
+}
+#custom-trash.normal {
+  color: #888888; /* gris tenue cuando está vacía */
+}
+#custom-trash.default {
+  color: #A3BE8C; /* verde normal cuando hay pocos ficheros */
+}
+/* --- Network --- */
+#network.disconnected {
+  color: #BF616A;
+}
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  color: #EBCB8B;
+}
+/* --- Notifications --- */
+#custom-notifications {
+  color: #A3BE8C;
+}
+#custom-temperature.warning,
+#custom-trash.many-trash,
+#custom-notifications:hover {
+  color: #EBCB8B;
+}

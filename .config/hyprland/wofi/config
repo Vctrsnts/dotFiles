@@ -1,0 +1,44 @@
+# ───────────────────────────────────────────────
+# Wofi Configuration - Nord Theme Setup
+# ───────────────────────────────────────────────
+# Este archivo define la configuración principal
+# de Wofi como lanzador de aplicaciones.
+#
+# Ajustes clave:
+# - background: rgba(0,0,0,0.92)    Fondo oscuro translúcido para mejorar la legibilidad.
+# - foreground: #e6e6e6             Color del texto principal, claro sobre fondo oscuro.
+# - font: "JetBrains Mono 11"       Tipografía monoespaciada, consistente con el estilo Nord.
+# - hide_search=true                Oculta la barra de búsqueda para un menú más limpio.
+# - show=drun                       Modo de ejecución de aplicaciones (desktop entries).
+# - prompt=Search...                Texto de indicación en la barra de búsqueda.
+# - width=600 / height=400          Dimensiones de la ventana principal.
+# - lines=10 / columns=1            Número de entradas visibles y disposición en columnas.
+# - padding=5                       Espaciado interno de la ventana.
+# - image_size=32                   Tamaño de los iconos de las aplicaciones.
+# - term=wezterm                    Terminal predeterminado para ejecutar comandos.
+# - no_actions=true                 Desactiva acciones extra, simplificando el menú.
+# - insensitive=true                Búsqueda insensible a mayúsculas/minúsculas.
+# - allow_images=true               Permite mostrar iconos junto al texto de las aplicaciones.
+#
+# Este fichero, junto con los estilos CSS, asegura
+# que Wofi se integre visualmente con el tema Nord
+# y ofrezca una experiencia limpia y coherente.
+# ───────────────────────────────────────────────
+[wofi]
+background = rgba(0,0,0,0.92) # Cleaned - adjusted wofi background for readability
+foreground = #e6e6e6
+font = "JetBrains Mono 11"
+
+hide_search=true
+show = drun
+prompt = Search...
+width = 600
+height = 400
+lines = 10
+columns = 1
+padding:5
+image_size = 32
+term = wezterm
+no_actions = true
+insensitive = true
+allow_images = true

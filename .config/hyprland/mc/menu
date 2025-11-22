@@ -1,0 +1,28 @@
+# ---------------------------------------------------------
+# Menú personalizado de Midnight Commander
+# Se abre con F2 dentro de MC
+# Cada entrada tiene un identificador (M, U, L, C) y un comando
+# ---------------------------------------------------------
+
+M Montar HDD USB externo
+    # Ejecuta el script de montaje automático
+    # Después muestra un mensaje y espera a que pulses Enter
+    sh -c '~/.local/bin/mount-usb.sh; echo "Pulsa Enter para volver a MC..."; read dummy'
+
+U Desmontar HDD USB externo
+    # Ejecuta el script de desmontaje automático
+    # Después muestra un mensaje y espera a que pulses Enter
+    sh -c '~/.local/bin/umount-usb.sh; echo "Pulsa Enter para volver a MC..."; read dummy'
+
+L Listar discos USB detectados
+    # Muestra todos los discos USB conectados (montados o no)
+    # Incluye nombre, tamaño, tipo de FS, punto de montaje y transporte
+    # Después espera a que pulses Enter
+    sh -c 'lsblk -o NAME,SIZE,FSTYPE,MOUNTPOINT,TRAN | grep usb; echo "Pulsa Enter para volver a MC..."; read dummy'
+
+C Consultar discos USB montados
+    # Filtra solo las particiones USB que ya están montadas
+    # Así puedes ver qué discos externos están en uso y dónde
+    # Después espera a que pulses Enter
+    sh -c 'lsblk -o NAME,SIZE,FSTYPE,MOUNTPOINT,TRAN | grep usb | grep -v "disk"; echo "Pulsa Enter para volver a MC..."; read dummy'
+
