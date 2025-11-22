@@ -1,9 +1,9 @@
 # dotFiles
 
 Tots els fitxers de configuració que faig servir o que he fet servir per:
-- **i3wm** ![Made for Debian](https://img.shields.io/badge/Made%20for-Debian-white?logo=debian) [![Packages](https://repology.org/badge/latest-versions/i3.svg)](https://repology.org/metapackage/i3/versions)
-- **sway** ![Made for Debian](https://img.shields.io/badge/Made%20for-Debian-white?logo=debian) ![Sway version](https://img.shields.io/badge/Sway-1.11-white?logo=sway)
-- **hyprland** ![Made for ArchLinux](https://img.shields.io/badge/Made%20for-Arch-white?logo=archlinux) ![Hyprland version](https://img.shields.io/badge/Hyprland-0.52.1-white?logo=hyprland)
+- [i3wm](https://github.com/i3/i3) ![Made for Debian](https://img.shields.io/badge/Made%20for-Debian-white?logo=debian) [![Packages](https://repology.org/badge/latest-versions/i3.svg)](https://repology.org/metapackage/i3/versions)
+- [sway](https://github.com/swaywm/sway) ![Made for Debian](https://img.shields.io/badge/Made%20for-Debian-white?logo=debian) [![Packages](https://repology.org/badge/latest-versions/sway.svg)](https://repology.org/metapackage/sway/versions)
+- [hyprland](https://github.com/hyprwm/Hyprland) ![Made for ArchLinux](https://img.shields.io/badge/Made%20for-Arch-white?logo=archlinux) [![Packages](https://repology.org/badge/latest-versions/hyprland.svg)](https://repology.org/metapackage/hyprland/versions)
 
 ---
 
