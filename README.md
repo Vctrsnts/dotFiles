@@ -16,11 +16,11 @@ git clone git@github.com:vctrsnts/dotFiles.git
 cd dotFiles
 
 .
-├── .config/      # Codi font principal on es troben els directoris amb els respectius fitxers
-├───── hyprland   # Fitxers de configuració per Hyprland
-├───── i3wm       # Fitxers de configuració per I3wm
-├───── sway       # Fitxers de configuració per Sway
-├── .local/       # Codi font especific ( en aquest cas, de les copies de seguretat )
-├── LICENSE       # Llicencia
-└── README.md     # Aquest arxiu
+├── .config/         # Codi font principal on es troben els directoris amb els respectius fitxers
+│     ├── hyprland/  # Fitxers de configuració per Hyprland
+│     ├── i3wm/      # Fitxers de configuració per I3wm
+│     └── sway/      # Fitxers de configuració per Sway
+├── .local/          # Codi font especific ( en aquest cas, de les copies de seguretat )
+├── LICENSE          # Llicencia
+└── README.md        # Aquest arxiu
 ```
